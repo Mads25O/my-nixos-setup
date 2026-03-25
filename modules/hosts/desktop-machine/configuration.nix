@@ -5,7 +5,15 @@
       imports = [
         self.nixosModules.desktopMachineHardware
         self.nixosModules.desktopNiri
+        inputs.home-manager.nixosModules.home-manager
       ];
+
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
+        users.mads = import ./_home.nix;
+      };
 
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
