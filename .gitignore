@@ -1,0 +1,2 @@
+modules/hosts/*/hardware.nix
+*.backup
