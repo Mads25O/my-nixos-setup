@@ -98,8 +98,8 @@
             # Monitor movement (your existing ones)
             "Mod+Alt+Right".focus-monitor-right = null;
             "Mod+Alt+Left".focus-monitor-left = null;
-            "Mod+Alt+Right".move-column-to-monitor-right = null;
-            "Mod+Alt+Left".move-column-to-monitor-left = null;
+            "Mod+Alt+Shift+Right".move-column-to-monitor-right = null;
+            "Mod+Alt+Shift+Left".move-column-to-monitor-left = null;
 
             # Session
             "Mod+Shift+E".quit = null;
