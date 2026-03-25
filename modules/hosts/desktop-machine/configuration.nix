@@ -4,7 +4,7 @@
     {
       imports = [
         self.nixosModules.desktopMachineHardware
-        self.nixosModules.niri
+        self.nixosModules.desktopNiri
       ];
 
       boot.loader.systemd-boot.enable = true;

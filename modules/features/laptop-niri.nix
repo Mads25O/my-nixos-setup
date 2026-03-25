@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
 
-  flake.nixosModules.niri =
+  flake.nixosModules.laptopNiri =
     { pkgs, lib, ... }:
     {
       programs.niri = {
@@ -23,7 +23,7 @@
         inherit pkgs;
         settings = {
           spawn-at-startup = [
-            (lib.getExe self'.packages.laptopNoctalia)
+            (lib.getExe self'.packages.myNoctalia)
           ];
 
           input.mouse = {

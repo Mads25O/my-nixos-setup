@@ -4,7 +4,7 @@
     {
       imports = [
         self.nixosModules.laptopMachineHardware
-        self.nixosModules.niri
+        self.nixosModules.laptopNiri
         inputs.home-manager.nixosModules.home-manager
       ];
 
