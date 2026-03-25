@@ -19,7 +19,7 @@
     }:
     {
 
-      packages.laptopNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+      packages.desktopNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
           spawn-at-startup = [
