@@ -112,7 +112,7 @@
             "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
 
             # Noctalia launcher (your existing one)
-            "Mod+N".spawn-sh = "${lib.getExe self'.packages.laptopNoctalia} ipc call launcher toggle";
+            "Mod+N".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           };
 
         };
