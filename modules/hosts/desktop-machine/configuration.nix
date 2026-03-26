@@ -90,6 +90,8 @@
         unzip
         git
         cage
+        wl-clipboard
+        cliphist
       ];
 
       nix.settings.experimental-features = [ "nix-command" "flakes" ];
