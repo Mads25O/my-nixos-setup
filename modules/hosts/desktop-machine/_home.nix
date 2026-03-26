@@ -77,4 +77,22 @@
       lock = "${pkgs.swaylock}/bin/swaylock -f";
     };
   };
+  
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
+      package = pkgs.catppuccin-gtk;
+    };
+    cursorTheme = {
+      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+    };
+    gtk4.theme = null;
+  };
+  
+  home.sessionVariables = {
+    GTK_THEME = "Catppuccin-Mocha-Standard-Mauve-Dark";
+  };
+
 }
