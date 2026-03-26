@@ -41,6 +41,15 @@
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
+          extraConfig = ''
+            output "DP-1" {
+              position x=0 y=0
+            }
+            output "DP-3" {
+              position x=2560 y=0
+            }
+          '';
+
           binds = {
             # Apps
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
