@@ -87,6 +87,8 @@
         spotify
         tree
         fuzzel
+        unzip
+        git
       ];
 
       nix.settings.experimental-features = [ "nix-command" "flakes" ];
