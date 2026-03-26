@@ -108,5 +108,13 @@
       # Auto upgrade
       system.autoUpgrade.enable = true;
       system.autoUpgrade.allowReboot = true;
+
+      # Auto delete old generations
+      nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
+
     };
 }
