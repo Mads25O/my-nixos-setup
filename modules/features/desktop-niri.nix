@@ -124,6 +124,7 @@
             # Noctalia launcher (your existing one)
             "Mod+N".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+Shift+S".spawn-sh = "${lib.getExe pkgs.cage} -- ${lib.getExe pkgs.spotify}";
+            "Mod+V".spawn-sh = "cliphist list | fuzzel --demu | cliphis decode | wl-copy";
           };
 
         };

@@ -4,6 +4,8 @@
   home.homeDirectory = "/home/mads";
   home.stateVersion = "25.11";
 
+  services.cliphist.enable = true;
+
   programs.bash = {
     enable = true;
     initExtra = ''
