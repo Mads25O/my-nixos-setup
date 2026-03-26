@@ -1,4 +1,4 @@
 *.backup
 hello.nix
-result/
+result
 
