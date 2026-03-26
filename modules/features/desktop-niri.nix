@@ -40,7 +40,7 @@
             border = {
               width = 2;
               active.color = "#cba6f7";
-              incative.color = "#313244";
+              inactive.color = "#313244";
             };
           };
 
