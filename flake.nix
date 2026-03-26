@@ -13,5 +13,13 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} 
+    imports = [(inputs.import-tree ./modules)];
+    perSystem = { pkgs, ... }: {
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit (pkgs.stdenv.hostPlatform) system;
+        config.allowUnfree = true;
+      };
+    };
+  };
 }
