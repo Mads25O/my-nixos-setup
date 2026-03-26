@@ -89,6 +89,7 @@
         fuzzel
         unzip
         git
+        cage
       ];
 
       nix.settings.experimental-features = [ "nix-command" "flakes" ];

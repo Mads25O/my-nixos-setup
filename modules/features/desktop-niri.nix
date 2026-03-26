@@ -39,6 +39,13 @@
             focus-ring.off = null;
           };
 
+          window-rules = [
+            {
+              matches = [{ app-id = "^spotify$"; }];
+              draw-border-with-background = false;
+            }
+          ];
+
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
           extraConfig = ''
@@ -116,6 +123,7 @@
 
             # Noctalia launcher (your existing one)
             "Mod+N".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+            "Mod+Shift+S".spawn-sh = "${lib.getExe pkgs.cage} -- ${lib.getExe pkgs.spotify}";
           };
 
         };
