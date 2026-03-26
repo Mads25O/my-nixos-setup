@@ -25,6 +25,11 @@
         enable32Bit = true;
         extraPackages = with pkgs; [ nvidia-vaapi-driver ];
       };
+
+      environment.systemPackages = with pkgs; [
+        
+      ];      
+
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
       system.stateVersion = "25.11";
