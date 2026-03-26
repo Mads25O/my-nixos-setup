@@ -37,6 +37,11 @@
           layout = {
             gaps = 0;
             focus-ring.off = null;
+            border = {
+              width = 2;
+              active.color = "#cba6f7";
+              incative.color = "#313244";
+            };
           };
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
