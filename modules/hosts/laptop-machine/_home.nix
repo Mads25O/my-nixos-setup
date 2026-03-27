@@ -39,6 +39,7 @@
     settings = {
       font_family = "JetBrainsMonoNL Nerd Font";
       font_size = "13.0";
+      hide_window_decoration = "yes";
       background_opacity = "0.95";
       enable_audio_bell = false;
       cursor_shape = "beam";
