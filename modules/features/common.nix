@@ -6,6 +6,10 @@
         inputs.home-manager.nixosModules.home-manager
       ];
 
+      environment.sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+      };
+
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
 
