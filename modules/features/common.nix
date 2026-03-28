@@ -84,6 +84,7 @@
         python3
         kitty
         fuzzel
+        wl-clipboard
 
         # Common software
         spotify 
