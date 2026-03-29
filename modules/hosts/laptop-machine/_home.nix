@@ -96,12 +96,12 @@
             status = "disable";
           }
           {
-            criteria = "Some Monitor Name";
+            criteria = "DP-3";
             mode = "1920x1080";
             position = "0,0";
           }
           {
-            criteria = "Some Other Monitor";
+            criteria = "DP-4";
             mode = "1920x1080";
             position = "1920,0";
           }
