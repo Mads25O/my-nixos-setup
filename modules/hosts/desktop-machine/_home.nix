@@ -38,6 +38,7 @@
         format = "[$virtualenv]($style) ";
         style = "yellow";
         python_binary = "python3";
+      };
     };
   };
 
