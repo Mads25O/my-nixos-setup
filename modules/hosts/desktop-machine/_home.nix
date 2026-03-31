@@ -16,7 +16,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = "$directory$git_branch$git_status$character";
+      format = "$directory$git_branch$git_status$python$character";
       character = {
         success_symbol = "[❯](purple)";
         error_symbol = "[❯](red)";
@@ -33,6 +33,11 @@
       git_status = {
         style = "yellow";
       };
+
+      python = {
+        format = "[$virtualenv]($style) ";
+        style = "yellow";
+        python_binary = "python3";
     };
   };
 
