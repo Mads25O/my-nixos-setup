@@ -5,8 +5,8 @@
   home.stateVersion = "25.11";
 
   imports = [ 
-    ../../features/_shell.nix
-    ../../features/_sway.nix
+    ../../home/_shell.nix
+    ../../home/_sway.nix
   ];
 
   services.cliphist.enable = true;
