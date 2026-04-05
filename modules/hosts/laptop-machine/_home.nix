@@ -91,24 +91,24 @@
       {
         profile.name = "work";
         profile.outputs = [
+#          {
+#            criteria = "eDP-1";
+#            status = "disable";
+#          }
           {
-            criteria = "eDP-1";
-            status = "disable";
-          }
-          {
-            criteria = "DP-3";
-            mode = "1920x1080";
+            criteria = "Samsung Electric Company LS27A600U H4ZT404345";
+            mode = "2560x1440";
             position = "0,0";
           }
           {
-            criteria = "DP-4";
-            mode = "1920x1080";
-            position = "1920,0";
+            criteria = "Samsung Electric Company LS27A600U H4ZT404299";
+            mode = "2560x1440";
+            position = "2560,0";
           }
           {
-            criteria = "Third Monitor";
-            mode = "1920x1080";
-            position = "3840,0";
+            criteria = "HDMI-A-2";
+            mode = "2560x1440";
+            position = "5120,0";
           }
         ];
       }
