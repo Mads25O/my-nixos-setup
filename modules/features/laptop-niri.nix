@@ -47,14 +47,6 @@
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-          # Virtual box full screen fix
-          window-rules = [
-            {
-              match.title = "Oracle VirtualBox";
-              open-floating = true;
-            }
-          ];
-
           binds = {
             # Apps
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
