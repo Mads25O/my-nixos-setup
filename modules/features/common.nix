@@ -31,12 +31,20 @@
       };
 
       services.xserver.enable = true;
-      services.displayManager.gdm.enable = true;
-      services.desktopManager.gnome.enable = true;
       services.xserver.xkb = {
         layout = "dk";
         variant = "";
       };
+
+      # Display manager (login screen)
+      services.displayManager.sddm.enable = true;
+
+      # GNOME (sletter det nok snart idk)
+      services.desktopManager.gnome.enable = true;
+      
+      # KDE Plasma
+      services.desktopManager.plasma6.enable = true;
+      
       console.keyMap = "dk-latin1";
 
       services.printing.enable = true;
