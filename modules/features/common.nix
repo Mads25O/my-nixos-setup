@@ -38,9 +38,6 @@
 
       # Display manager (login screen)
       services.displayManager.sddm.enable = true;
-
-      # GNOME (sletter det nok snart idk)
-      services.desktopManager.gnome.enable = true;
       
       # KDE Plasma
       services.desktopManager.plasma6.enable = true;
