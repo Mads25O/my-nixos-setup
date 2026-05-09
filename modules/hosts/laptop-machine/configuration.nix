@@ -33,8 +33,8 @@
       virtualisation.docker.enable = true;
 
       environment.systemPackages = with pkgs; [
-	prismlauncher
-        
+	      prismlauncher
+        ardour
       ];
 
       users.users.mads.extraGroups = [ "vboxusers" "docker" ];
