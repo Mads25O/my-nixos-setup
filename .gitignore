@@ -1,4 +1,5 @@
 *.backup
 hello.nix
 result
-
+all-files.txt
+command.txt
