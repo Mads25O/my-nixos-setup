@@ -47,6 +47,7 @@
       scrollback_lines = 10000;
       background = "#1e1e2e";
       foreground = "#cdd6f4";
+      hide_window_decorations = "yes";
       color0 = "#45475a";
       color1 = "#f38ba8";
       color2 = "#a6e3a1";
