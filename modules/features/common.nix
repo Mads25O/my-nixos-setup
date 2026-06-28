@@ -96,13 +96,16 @@
         obsidian 
         discord
         vscode 
+        libreoffice
         mullvad-vpn
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
         # Cybersecurity tools
         dig
         exiftool
         wireshark 
-        burpsuite 
+        burpsuite
+        sqlmap 
         
         # Fonts
         nerd-fonts.jetbrains-mono
