@@ -22,6 +22,11 @@ done
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";    
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -59,6 +64,12 @@ command.txt
 
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
+
+      boot.plymouth = {
+        enable = true;
+        theme = "rings";
+        themePackages = [ pkgs.adi1090x-plymouth-themes ];
+      };
 
       networking.networkmanager.enable = true;
       networking.firewall.enable = true;
@@ -143,13 +154,16 @@ command.txt
         obsidian 
         discord
         vscode 
+        libreoffice
         mullvad-vpn
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
         # Cybersecurity tools
         dig
         exiftool
         wireshark 
-        burpsuite 
+        burpsuite
+        sqlmap 
         
         # Fonts
         nerd-fonts.jetbrains-mono
@@ -2433,6 +2447,7 @@ command.txt
       scrollback_lines = 10000;
       background = "#1e1e2e";
       foreground = "#cdd6f4";
+      hide_window_decorations = "yes";
       color0 = "#45475a";
       color1 = "#f38ba8";
       color2 = "#a6e3a1";
@@ -2444,6 +2459,7 @@ command.txt
     };
   };
 }
+
 === FILE: ./modules/home/_sway.nix ===
 { pkgs, ... }:
 {

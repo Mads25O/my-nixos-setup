@@ -8,6 +8,8 @@
         self.nixosModules.common
       ];
 
+      boot.loader.timeout = 5;
+
       home-manager.users.mads = import ./_home.nix;
 
       networking.hostName = "desktop-nixos";
