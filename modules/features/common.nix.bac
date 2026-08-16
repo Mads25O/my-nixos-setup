@@ -1,0 +1,154 @@
+{ self, inputs, ... }: {
+  flake.nixosModules.common =
+    { pkgs, ... }:
+    {
+      imports = [
+        inputs.home-manager.nixosModules.home-manager
+      ];
+
+      environment.sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+      };
+
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
+
+      boot.plymouth = {
+        enable = true;
+        theme = "rings";
+        themePackages = [ pkgs.adi1090x-plymouth-themes ];
+      };
+
+      networking.networkmanager.enable = true;
+      networking.firewall.enable = true;
+
+      time.timeZone = "Europe/Copenhagen";
+      i18n.defaultLocale = "en_DK.UTF-8";
+      i18n.extraLocaleSettings = {
+        LC_ADDRESS = "da_DK.UTF-8";
+        LC_IDENTIFICATION = "da_DK.UTF-8";
+        LC_MEASUREMENT = "da_DK.UTF-8";
+        LC_MONETARY = "da_DK.UTF-8";
+        LC_NAME = "da_DK.UTF-8";
+        LC_NUMERIC = "da_DK.UTF-8";
+        LC_PAPER = "da_DK.UTF-8";
+        LC_TELEPHONE = "da_DK.UTF-8";
+        LC_TIME = "da_DK.UTF-8";
+      };
+
+      services.xserver.enable = true;
+      services.xserver.xkb = {
+        layout = "dk";
+        variant = "";
+      };
+
+      # Display manager (login screen)
+      services.displayManager.sddm.enable = true;
+      
+      # KDE Plasma
+      services.desktopManager.plasma6.enable = true;
+      
+      console.keyMap = "dk-latin1";
+
+      services.printing.enable = true;
+
+      services.pulseaudio.enable = false;
+      security.rtkit.enable = true;
+      services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+      };
+
+      services.pipewire.wireplumber.extraConfig."51-prefer-speaker-hdmi-profile" = {
+        "monitor.alsa.rules" = [
+          {
+            matches = [
+              { "device.name" = "alsa_card.pci-0000_00_1f.3-platform-skl_hda_dsp_generic"; }
+            ];
+            actions = {
+              update-props = {
+                "device.profile" = "HiFi (HDMI1, HDMI2, HDMI3, Mic1, Mic2, Speaker)";
+              };
+            };
+          }
+        ];
+      };
+
+      users.users.mads = {
+        isNormalUser = true;
+        description = "Mads Overgård";
+        extraGroups = [ "networkmanager" "wheel" ];
+      };
+
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
+      };
+
+      programs.firefox.enable = true;
+      nixpkgs.config.allowUnfree = true;
+
+      environment.systemPackages = with pkgs; [
+        # Common system packages
+        wget 
+        curl 
+        git 
+        neovim 
+        fastfetch 
+        htop 
+        tree 
+        bat
+        p7zip
+        unzip 
+        zip 
+        jq
+        file
+        util-linux 
+        python3
+        kitty
+        fuzzel
+        wl-clipboard
+
+        # Common software
+        spotify 
+        obsidian 
+        discord
+        vscode 
+        libreoffice
+        mullvad-vpn
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+        # Cybersecurity tools
+        dig
+        exiftool
+        wireshark 
+        burpsuite
+        sqlmap 
+        
+        # Fonts
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.inconsolata
+        nerd-fonts.geist-mono
+      ];
+
+      nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+      # Mullvad
+      services.mullvad-vpn.enable = true;
+
+      # Auto upgrade
+      system.autoUpgrade.enable = true;
+      system.autoUpgrade.allowReboot = true;
+
+      # Auto delete old generations
+      nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
+
+    };
+}
