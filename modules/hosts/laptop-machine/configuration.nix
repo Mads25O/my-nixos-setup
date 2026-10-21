@@ -6,6 +6,9 @@
         self.nixosModules.laptopMachineHardware
         self.nixosModules.laptopNiri
         self.nixosModules.common
+        self.nixosModules.cybersecurity
+        self.nixosModules.desktopApps
+        self.nixosModules.mullvad
       ];
 
       home-manager.users.mads = import ./_home.nix;
@@ -32,17 +35,8 @@
       };
       virtualisation.docker.enable = true;
 
-      services.flatpak.enable = true;
-
-      environment.sessionVariables = {
-        XDG_DATA_DIRS = [
-          "/var/lib/flatpak/exports/share"
-          "$HOME/.local/share/flatpak/exports/share"
-        ];  
-      };
-
       environment.systemPackages = with pkgs; [
-	      prismlauncher
+	prismlauncher
         ardour
         lmms
       ];

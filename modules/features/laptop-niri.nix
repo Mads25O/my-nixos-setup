@@ -21,6 +21,7 @@
 
       packages.laptopNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
+        v2-settings = true;
         settings = {
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
@@ -31,8 +32,8 @@
           };
 
           input.touchpad = {
-            tap = null;
-            natural-scroll = null;
+            tap = _: {};
+            natural-scroll = _: {};
             click-method = "clickfinger";
           };
 
@@ -42,7 +43,7 @@
 
           layout = {
             gaps = 0;
-            focus-ring.off = null;
+            focus-ring.off = _: {};
           };
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
@@ -54,26 +55,26 @@
             "Mod+B".spawn-sh = lib.getExe pkgs.firefox;
 
             # Window management
-            "Mod+Q".close-window = null;
-            "Mod+F".maximize-column = null;
-            "Mod+Shift+F".fullscreen-window = null;
-            "Mod+C".center-column = null;
+            "Mod+Q".close-window = _: {};
+            "Mod+F".maximize-column = _: {};
+            "Mod+Shift+F".fullscreen-window = _: {};
+            "Mod+C".center-column = _: {};
 
             # Column
-            "Mod+comma".consume-window-into-column = null;
-            "Mod+period".expel-window-from-column = null;
+            "Mod+comma".consume-window-into-column = _: {};
+            "Mod+period".expel-window-from-column = _: {};
 
             # Focus movement
-            "Mod+Left".focus-column-left = null;
-            "Mod+Right".focus-column-right = null;
-            "Mod+Down".focus-window-down = null;
-            "Mod+Up".focus-window-up = null;
+            "Mod+Left".focus-column-left = _: {};
+            "Mod+Right".focus-column-right = _: {};
+            "Mod+Down".focus-window-down = _: {};
+            "Mod+Up".focus-window-up = _: {};
 
             # Move windows
-            "Mod+Shift+Left".move-column-left = null;
-            "Mod+Shift+Right".move-column-right = null;
-            "Mod+Shift+Down".move-window-down = null;
-            "Mod+Shift+Up".move-window-up = null;
+            "Mod+Shift+Left".move-column-left = _: {};
+            "Mod+Shift+Right".move-column-right = _: {};
+            "Mod+Shift+Down".move-window-down = _: {};
+            "Mod+Shift+Up".move-window-up = _: {};
 
             # Resize
             "Mod+Minus".set-column-width = "-10%";
@@ -90,25 +91,25 @@
             "Mod+Shift+2".move-column-to-workspace = 2;
             "Mod+Shift+3".move-column-to-workspace = 3;
             "Mod+Shift+4".move-column-to-workspace = 4;
-            "Mod+Tab".focus-workspace-down = null;
-            "Mod+Shift+Tab".focus-workspace-up = null;
+            "Mod+Tab".focus-workspace-down = _: {};
+            "Mod+Shift+Tab".focus-workspace-up = _: {};
 
             # Overview
-            "Mod+O".toggle-overview = null;
+            "Mod+O".toggle-overview = _: {};
 
             # Screenshots
-            "Print".screenshot = null;
-            "Ctrl+Print".screenshot-screen = null;
-            "Alt+Print".screenshot-window = null;
+            "Print".screenshot = _: {};
+            "Ctrl+Print".screenshot-screen = _: {};
+            "Alt+Print".screenshot-window = _: {};
 
             # Monitor movement (your existing ones)
-#            "Mod+Right".focus-monitor-right = null;
-#            "Mod+Left".focus-monitor-left = null;
-#            "Mod+Shift+Right".move-column-to-monitor-right = null;
-#            "Mod+Shift+Left".move-column-to-monitor-left = null;
+#            "Mod+Right".focus-monitor-right = _: {};
+#            "Mod+Left".focus-monitor-left = _: {};
+#            "Mod+Shift+Right".move-column-to-monitor-right = _: {};
+#            "Mod+Shift+Left".move-column-to-monitor-left = _: {};
 
             # Session
-            "Mod+Shift+E".quit = null;
+            "Mod+Shift+E".quit = _: {};
             "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
 
             # Noctalia launcher (your existing one)

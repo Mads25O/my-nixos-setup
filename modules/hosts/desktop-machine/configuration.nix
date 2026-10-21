@@ -6,6 +6,9 @@
         self.nixosModules.desktopMachineHardware
         self.nixosModules.desktopNiri
         self.nixosModules.common
+        self.nixosModules.cybersecurity
+        self.nixosModules.desktopApps
+        self.nixosModules.mullvad
       ];
 
       boot.loader.timeout = 5;

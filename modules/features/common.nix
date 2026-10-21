@@ -108,22 +108,6 @@
         wl-clipboard
         pulseaudio # gives you pactl, e.g. for audio-speaker / audio-headphones aliases
         appimage-run
-
-        # Common software
-        spotify 
-        obsidian 
-        discord
-        vscode 
-        libreoffice
-        mullvad-vpn
-        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-        # Cybersecurity tools
-        dig
-        exiftool
-        wireshark 
-        burpsuite
-        sqlmap 
         
         # Fonts
         nerd-fonts.jetbrains-mono
@@ -132,9 +116,6 @@
       ];
 
       nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-      # Mullvad
-      services.mullvad-vpn.enable = true;
 
       # Auto upgrade
       system.autoUpgrade.enable = true;
