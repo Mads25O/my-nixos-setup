@@ -117,7 +117,7 @@
 
             # Session
             "Mod+Shift+E".quit = _: {};
-            "Mod+L".spawn-sh = lib.getExe pkgs.swaylock;
+            "Mod+L".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
 
             # Noctalia launcher (your existing one)
             "Mod+N".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";

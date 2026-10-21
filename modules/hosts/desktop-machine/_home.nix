@@ -6,7 +6,6 @@
 
   imports = [ 
     ../../home/_shell.nix
-    ../../home/_sway.nix
   ];
 
   services.cliphist.enable = true;
