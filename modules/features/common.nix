@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.common =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       imports = [
         inputs.home-manager.nixosModules.home-manager
@@ -53,6 +53,9 @@
       
       # KDE Plasma
       services.desktopManager.plasma6.enable = true;
+
+      # Aktiver hvilken session SDDM starter som standard
+      services.displayManager.defaultSession = lib.mkForce "niri";
       
       console.keyMap = "dk-latin1";
 
