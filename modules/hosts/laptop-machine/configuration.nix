@@ -9,6 +9,7 @@
         self.nixosModules.cybersecurity
         self.nixosModules.desktopApps
         self.nixosModules.mullvad
+        self.nixosModules.sddm
       ];
 
       home-manager.users.mads = import ./_home.nix;

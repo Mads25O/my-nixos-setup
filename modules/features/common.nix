@@ -47,9 +47,6 @@
         layout = "dk";
         variant = "";
       };
-
-      # Display manager (login screen)
-      services.displayManager.sddm.enable = true;
       
       # KDE Plasma
       services.desktopManager.plasma6.enable = true;
