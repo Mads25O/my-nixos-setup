@@ -36,11 +36,15 @@
           };
 
           layout = {
-            gaps = 0;
+            gaps = 10;
             focus-ring.off = {};
           };
 
           window-rules = [
+            {
+              geometry-corner-radius = 12;
+              clip-to-geometry = true;
+            }
             {
               matches = [{ app-id = "^spotify$"; }];
               draw-border-with-background = false;

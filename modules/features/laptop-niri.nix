@@ -42,9 +42,16 @@
           };
 
           layout = {
-            gaps = 0;
+            gaps = 10;
             focus-ring.off = _: {};
           };
+        
+          window-rules = [
+            {
+              geometry-corner-radius = 12;
+              clip-to-geometry = true;
+            }
+          ];
 
           xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
