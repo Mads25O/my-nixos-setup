@@ -3,7 +3,7 @@
     { pkgs, ... }:
     let
       sddmTheme = pkgs.sddm-astronaut.override {
-        embeddedTheme = "japanese_aesthetic";
+        embeddedTheme = "pixel_sakura_static";
         themeConfig = {
           Font = "JetBrainsMono Nerd Font";
           HourFormat = "HH:mm";
