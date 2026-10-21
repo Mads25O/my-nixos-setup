@@ -47,6 +47,12 @@
         layout = "dk";
         variant = "";
       };
+
+      # Tab med to mellemrum
+      programs.nano.nanorc = ''
+        set tabtospaces
+        set tabsize 2
+      '';
       
       # KDE Plasma
       services.desktopManager.plasma6.enable = true;
