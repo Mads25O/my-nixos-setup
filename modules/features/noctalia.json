@@ -195,7 +195,7 @@
       "animationSpeed": 1,
       "animationDisabled": false,
       "compactLockScreen": false,
-      "lockScreenAnimations": false,
+      "lockScreenAnimations": true,
       "lockOnSuspend": true,
       "showSessionButtonsOnLockScreen": true,
       "showHibernateOnLockScreen": false,
@@ -215,10 +215,10 @@
       "allowPasswordWithFprintd": false,
       "clockStyle": "custom",
       "clockFormat": "hh\\nmm",
-      "passwordChars": false,
+      "passwordChars": true,
       "lockScreenMonitors": [],
-      "lockScreenBlur": 0,
-      "lockScreenTint": 0,
+      "lockScreenBlur": 0.7,
+      "lockScreenTint": 0.1,
       "keybinds": {
         "keyUp": [
           "Up"
