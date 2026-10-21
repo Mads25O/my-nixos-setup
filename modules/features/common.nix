@@ -6,8 +6,14 @@
         inputs.home-manager.nixosModules.home-manager
       ];
 
+      services.flatpak.enable = true;
+
       environment.sessionVariables = {
         NIXOS_OZONE_WL = "1";
+        XDG_DATA_DIRS = [
+          "/var/lib/flatpak/exports/share"
+          "$HOME/.local/share/flatpak/exports/share"
+        ];
       };
 
       boot.loader.systemd-boot.enable = true;
