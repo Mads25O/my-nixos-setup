@@ -6,6 +6,7 @@
 
   imports = [ 
     ../../home/_shell.nix
+    ../../home/_idle.nix
   ];
 
   services.cliphist.enable = true;
