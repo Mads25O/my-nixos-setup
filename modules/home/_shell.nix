@@ -90,8 +90,8 @@
 
       # Cursor
       cursor_shape = "beam";
-      cursor_trail = 3;
-      cursor_trail_decay = "0.1 0.4";
+      cursor_trail = 2;
+      cursor_trail_decay = "0.1 0.3";
 
       # Tabs
       tab_bar_edge = "top";
