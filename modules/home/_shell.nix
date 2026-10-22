@@ -99,4 +99,19 @@
       tab_powerline_style = "slanted";
     };
   };
+
+  # Dette burde nok være i sin egen fil på et tidspunkt
+  # Nautilus settings
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "org.gnome.Nautilus.desktop";
+    };
+  };
 }
