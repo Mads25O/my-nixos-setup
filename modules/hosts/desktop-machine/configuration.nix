@@ -9,6 +9,7 @@
         self.nixosModules.cybersecurity
         self.nixosModules.desktopApps
         self.nixosModules.mullvad
+        self.nixosModules.sddm
       ];
 
       boot.loader.timeout = 5;

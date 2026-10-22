@@ -37,7 +37,7 @@
 
           layout = {
             gaps = 10;
-            focus-ring.off = {};
+            focus-ring.off = _: {};
           };
 
           window-rules = [
@@ -69,26 +69,26 @@
             "Mod+B".spawn-sh = lib.getExe pkgs.firefox;
 
             # Window management
-            "Mod+Q".close-window = {};
-            "Mod+F".maximize-column = {};
-            "Mod+Shift+F".fullscreen-window = {};
-            "Mod+C".center-column = {};
+            "Mod+Q".close-window = _: {};
+            "Mod+F".maximize-column = _: {};
+            "Mod+Shift+F".fullscreen-window = _: {};
+            "Mod+C".center-column = _: {};
 
             # Column
-            "Mod+comma".consume-window-into-column = {};
-            "Mod+period".expel-window-from-column = {};
+            "Mod+comma".consume-window-into-column = _: {};
+            "Mod+period".expel-window-from-column = _: {};
 
             # Focus movement
-            "Mod+Left".focus-column-left = {};
-            "Mod+Right".focus-column-right = {};
-            "Mod+Down".focus-window-down = {};
-            "Mod+Up".focus-window-up = {};
+            "Mod+Left".focus-column-left = _: {};
+            "Mod+Right".focus-column-right = _: {};
+            "Mod+Down".focus-window-down = _: {};
+            "Mod+Up".focus-window-up = _: {};
 
             # Move windows
-            "Mod+Shift+Left".move-column-left = {};
-            "Mod+Shift+Right".move-column-right = {};
-            "Mod+Shift+Down".move-window-down = {};
-            "Mod+Shift+Up".move-window-up = {};
+            "Mod+Shift+Left".move-column-left = _: {};
+            "Mod+Shift+Right".move-column-right = _: {};
+            "Mod+Shift+Down".move-window-down = _: {};
+            "Mod+Shift+Up".move-window-up = _: {};
 
             # Resize
             "Mod+Minus".set-column-width = "-10%";
@@ -105,25 +105,25 @@
             "Mod+Shift+2".move-column-to-workspace = 2;
             "Mod+Shift+3".move-column-to-workspace = 3;
             "Mod+Shift+4".move-column-to-workspace = 4;
-            "Mod+Tab".focus-workspace-down = {};
-            "Mod+Shift+Tab".focus-workspace-up = {};
+            "Mod+Tab".focus-workspace-down = _: {};
+            "Mod+Shift+Tab".focus-workspace-up = _: {};
 
             # Overview
-            "Mod+O".toggle-overview = {};
+            "Mod+O".toggle-overview = _: {};
 
             # Screenshots
-            "Print".screenshot = {};
-            "Ctrl+Print".screenshot-screen = {};
-            "Alt+Print".screenshot-window = {};
+            "Print".screenshot = _: {};
+            "Ctrl+Print".screenshot-screen = _: {};
+            "Alt+Print".screenshot-window = _: {};
 
             # Monitor movement (your existing ones)
-            "Mod+Alt+Right".focus-monitor-right = {};
-            "Mod+Alt+Left".focus-monitor-left = {};
-            "Mod+Alt+Shift+Right".move-column-to-monitor-right = {};
-            "Mod+Alt+Shift+Left".move-column-to-monitor-left = {};
+            "Mod+Alt+Right".focus-monitor-right = _: {};
+            "Mod+Alt+Left".focus-monitor-left = _: {};
+            "Mod+Alt+Shift+Right".move-column-to-monitor-right = _: {};
+            "Mod+Alt+Shift+Left".move-column-to-monitor-left = _: {};
 
             # Session
-            "Mod+Shift+E".quit = {};
+            "Mod+Shift+E".quit = _: {};
             "Mod+L".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
 
             # Noctalia launcher (your existing one)
