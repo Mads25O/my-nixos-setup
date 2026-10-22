@@ -50,7 +50,7 @@
 
       # Tab med to mellemrum
       programs.nano.nanorc = ''
-        set tabtospaces
+        set tabstospaces
         set tabsize 2
       '';
       
@@ -59,6 +59,9 @@
 
       # Aktiver hvilken session SDDM starter som standard
       services.displayManager.defaultSession = lib.mkForce "niri";
+
+      # Nautilus file manager
+      programs.dconf.enable = true;
       
       console.keyMap = "dk-latin1";
 
@@ -109,8 +112,9 @@
         kitty
         fuzzel
         wl-clipboard
-        pulseaudio # gives you pactl, e.g. for audio-speaker / audio-headphones aliases
+        pulseaudio 
         appimage-run
+        nautilus
         
         # Fonts
         nerd-fonts.jetbrains-mono
